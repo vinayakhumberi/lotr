@@ -1,0 +1,65 @@
+/*
+// Sample code to perform I/O:
+*/
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;                               // Reading input from STDIN
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+function main(input) {
+    const data = logic(input);
+    process.stdout.write(data + "\n");       // Writing output to STDOUT
+}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+
+// Write your code here
+
+function logic(input) {
+    const inData = input.split('\n');
+    const noOfTests = parseInt(inData[0]);
+    let sum = -1;
+    
+    for(let k=1; k<(noOfTests * 2); k+=2) {
+        const totalI = k;
+        const dataI = k + 1;
+        sum = moreLogic(inData[totalI], inData[dataI], sum);
+    }
+    // console.log('Sum', sum);
+    return sum;
+    
+    
+}
+
+function moreLogic (t, d, sumOld) {
+    const total = parseInt(t);
+    const data = d.split(' ').map(item => parseInt(item));
+    let sum = sumOld;
+    for (let i = 0; i < total; i++) {
+        let lSum = 0;
+        const currSpot = i;
+        let lnn = data[i];
+        let localPool = [currSpot];
+        while(localPool.indexOf(nextSpot) === -1) {
+            localPool.push(nextSpot);
+            nextSpot = data[nextSpot];
+        }
+        lSum = localPool.reduce((acc,item) => acc + item);
+        if (nextSpot === currSpot) {
+            if (lSum > sum) sum = lSum;
+        }
+    }
+    return sucm;
+    
+}
+
+
+lc

@@ -1,0 +1,61 @@
+import React, { useState, useLayoutEffect, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
+
+function debounce(cb, delay) {
+  let timer = null;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      cb(...args);
+    }, delay);
+  };
+}
+function Example(props) {
+  const [count, setCount] = useState(0);
+  const [flag, setFlag] = useState(true);
+  const flagRef = useRef(true);
+  const isMounted = useRef(false);
+  useEffect(() => {
+    isMounted.current = true;
+    // const timer = setTimeout(() => {
+    //   console.log(`You clicked ${count} times`);
+    // }, 3000);
+    return () => {
+      // clearTimeout(timer);
+      isMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    // const n = new
+    const timer = setTimeout(function() {
+      if (flagRef.current && isMounted.current) {
+        console.log(`You clicked ${count} times`);
+      }
+    }, 3000);
+    return () => {
+      if (!isMounted.current) {
+        clearTimeout(timer);
+      }
+    };
+  }, [count]);
+
+  const handleClick = () => {
+    setCount(count => count + 1);
+  };
+  const handleChange = () => {
+    flagRef.current = !flagRef.current;
+    setFlag(f => !f);
+  };
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={handleClick}>Click me</button>
+      <input type="checkbox" checked={flag} onChange={handleChange} />
+    </div>
+  );
+}
+// onClick={}
+// onChange={setFlag(flag => !flag)}
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Example />, rootElement);
