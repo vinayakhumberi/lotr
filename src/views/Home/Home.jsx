@@ -19,10 +19,10 @@ The routes for these is kept in "config/config.routes.js".
 
 I have just kept 1 reducer & action file, ideally the reducers & actions will be split based on the Use case.
 
-Components folder as such hold our "Pure Components" whose sole and whole purpose is take some input
+Components folder comprises of our "Pure Components" whose sole and whole purpose is take some input
 and provide a view.
 
-The pageviews have been kept under "View" folder here you will notice 2 Folders for now styles & Aggregates.
+The pageviews have been kept under "View" folder here you will notice 2 Folders for now ,styles & Aggregates.
 
 Aggregates contain compoments which are a combination of 2 or more Components. 
 

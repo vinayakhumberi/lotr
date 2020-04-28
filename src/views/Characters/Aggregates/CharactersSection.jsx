@@ -34,7 +34,9 @@ function CharactersSection(props) {
         }
         setCharacterData(newCharacters);
       } else {
-        setCharacterData(props.characters.data.docs);
+        const myData = [...props.characters.data.docs];
+        myData.reverse();
+        setCharacterData(myData);
       }
     }
   }, [searchText]);
