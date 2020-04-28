@@ -158,7 +158,7 @@ Text.defaultProps = {
   fontSize: 14,
   fontWeight: 400,
   fontStyle: "normal",
-  fontFamily: '"Poppins",sans-serif',
+  fontFamily: 'monospace',
   textAlign: "initial",
   height: "auto",
   lineHeight: null,

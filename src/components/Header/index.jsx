@@ -24,13 +24,22 @@ export default function (props) {
         </Link>
       </Left>
       <Right>
-        <Link to="/books" >
+        {/* <Link to="/books" >
           <Text
             as={'h1'}
             text={"Books"}
             fontSize={16}
             color="#e65100"
             fontWeight={props.type === 'books' ? 700 : 400} 
+          />
+        </Link> */}
+        <Link to="/characters" >
+          <Text
+            as={'h1'}
+            text={"Characters"}
+            fontSize={16}
+            color="#e65100"
+            fontWeight={props.type === 'characters' ? 700 : 400}
           />
         </Link>
         <Link to="/movies" >
@@ -40,15 +49,6 @@ export default function (props) {
             fontSize={16}
             color="#e65100"
             fontWeight={props.type === 'movies' ? 700 : 400} 
-          />
-        </Link>
-        <Link to="/characters" >
-          <Text
-            as={'h1'}
-            text={"Characters"}
-            fontSize={16}
-            color="#e65100"
-            fontWeight={props.type === 'characters' ? 700 : 400} 
           />
         </Link>
       </Right>

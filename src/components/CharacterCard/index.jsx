@@ -13,7 +13,7 @@ export default function (props) {
           text={props.data.name}
           fontSize={18}
           fontWeight={700}
-          color="#e65100"
+          color="#343434"
         />
         <Info>
           <Text
@@ -24,7 +24,7 @@ export default function (props) {
           <Text
             text={''+props.data.race}
             fontSize={14}
-            color="#e65100"
+            color="#343434"
           />
           <Text
             text={'Gender'}
@@ -34,7 +34,7 @@ export default function (props) {
           <Text
             text={''+props.data.gender}
             fontSize={14}s
-            color="#e65100"
+            color="#343434"
           />
           <Text
             text={'Realm'}
@@ -44,7 +44,7 @@ export default function (props) {
           <Text
             text={''+props.data.realm}
             fontSize={14}
-            color="#e65100"
+            color="#343434"
           />
           <a
             href={''+props.data.wikiUrl}

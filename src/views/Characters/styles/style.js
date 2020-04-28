@@ -26,3 +26,29 @@ export const QuotesContainer = styled.div`
     overflow: auto;
 
 `;
+
+export const Input = styled.input`
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: ${rem(50)};
+  margin: ${rem(10)} ${rem(0)};
+  &:focus{
+    outline: none;
+  }
+`;
+
+export const Button = styled.button`
+  color: #e65100;
+  font-size: ${rem(14)};
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: ${rem(20)};
+`;

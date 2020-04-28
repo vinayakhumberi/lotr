@@ -7,11 +7,12 @@ export const Container = styled.div`
   padding: ${rem(10)} ${rem(10)};
   width: ${rem(400)};
   margin-bottom: ${rem(20)};
-  ${props => props.selected ? `border: 10px solid;` : 'border: 10px solid transparent;'}
+  ${props => props.selected ? `border: 5px solid;` : 'border: 5px solid transparent;'}
   cursor: pointer;
 `;
 
 export const Info = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: ${rem(10)};
 `;
